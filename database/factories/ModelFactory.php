@@ -23,21 +23,23 @@ $factory->define(App\User::class, function (Faker $faker) {
     ];
 });
 
-$factory->define(App\Event::class, function(Faker $faker) {
+$factory->define(App\Event::class, function (Faker $faker) {
     return [
-        'game_id'      => 1,
-        'user_id'      => 1,
-        'quarter'      => 1,
-        'type'         => 'run',
-        'play'         => 'Spin 28 Sweep',
-        'yardage'      => 6,
-        'ball_carrier' => 8,
-        'tackled_by'   => 32
+        'game_id' => 1,
+        'user_id' => 1,
+        'quarter' => 1,
+        'type' => 'run',
+        'side' => $faker->randomElement(['left', 'middle', 'right']),
+        'yardage' => $faker->numberBetween(-3, 20),
+        'ball_carrier' => $faker->numberBetween(1, 99),
+        'tackled_by' => $faker->numberBetween(1, 99),
     ];
 });
 
 $factory->define(App\Game::class, function (Faker $faker) {
     return [
-        'user_id' => 1
+        'user_id' => 1,
+        'home_team' => 'Homers',
+        'away_team' => 'Visters',
     ];
 });

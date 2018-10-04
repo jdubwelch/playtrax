@@ -18,4 +18,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::post('/games/{id}/events', 'GameEventsController@store');
+Route::get('/games/{game}/events', 'GameEventsController@index');
+Route::post('/games/{game}/events', 'GameEventsController@store');

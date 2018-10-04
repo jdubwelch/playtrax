@@ -2,11 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Game;
 use App\Event;
 use Illuminate\Http\Request;
 
 class GameEventsController extends Controller
 {
+    public function index(Game $game)
+    {
+        $events = $game->events();
+
+        return view('gameEvents.index', compact('game', 'events'));
+    }
+
     public function store()
     {
         $event = Event::create([

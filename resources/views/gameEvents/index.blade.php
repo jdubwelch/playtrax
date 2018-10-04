@@ -1,0 +1,1 @@
+{{ $game->away_team }} vs {{ $game->home_team }}

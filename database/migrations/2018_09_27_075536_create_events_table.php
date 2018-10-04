@@ -8,8 +8,6 @@ class CreateEventsTable extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
     public function up()
     {
@@ -18,8 +16,8 @@ class CreateEventsTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->integer('game_id')->unsigned();
             $table->tinyInteger('quarter')->unsigned()->default(1);
-            $table->enum('type', ['run','pass'])->default('run');
-            $table->string('play', 100)->nullable();
+            $table->enum('type', ['run', 'pass'])->default('run');
+            $table->enum('side', ['left', 'middle', 'right'])->default('right');
             $table->smallInteger('yardage');
             $table->tinyInteger('ball_carrier')->unsigned()->nullable();
             $table->tinyInteger('tackled_by')->unsigned()->nullable();
@@ -29,8 +27,6 @@ class CreateEventsTable extends Migration
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
     public function down()
     {
