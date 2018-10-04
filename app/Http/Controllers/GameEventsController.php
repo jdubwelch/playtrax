@@ -10,7 +10,7 @@ class GameEventsController extends Controller
 {
     public function index(Game $game)
     {
-        $events = $game->events();
+        $events = $game->events;
 
         return view('gameEvents.index', compact('game', 'events'));
     }
