@@ -25,7 +25,19 @@ $factory->define(App\User::class, function (Faker $faker) {
 
 $factory->define(App\Event::class, function(Faker $faker) {
     return [
-        'play' => 'The Money Play',
-        'yardage' => 100
+        'game_id'      => 1,
+        'user_id'      => 1,
+        'quarter'      => 1,
+        'type'         => 'run',
+        'play'         => 'Spin 28 Sweep',
+        'yardage'      => 6,
+        'ball_carrier' => 8,
+        'tackled_by'   => 32
+    ];
+});
+
+$factory->define(App\Game::class, function (Faker $faker) {
+    return [
+        'user_id' => 1
     ];
 });

@@ -15,8 +15,14 @@ class CreateEventsTable extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('play', 100);
+            $table->integer('user_id')->unsigned();
+            $table->integer('game_id')->unsigned();
+            $table->tinyInteger('quarter')->unsigned()->default(1);
+            $table->enum('type', ['run','pass'])->default('run');
+            $table->string('play', 100)->nullable();
             $table->smallInteger('yardage');
+            $table->tinyInteger('ball_carrier')->unsigned()->nullable();
+            $table->tinyInteger('tackled_by')->unsigned()->nullable();
             $table->timestamps();
         });
     }
