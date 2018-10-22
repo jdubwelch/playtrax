@@ -9,7 +9,7 @@
 
                 <div class="card-body">
                    @foreach ($events as $event)
-                       <pre>A {{ $event->type }} play to the {{ $event->side }} for {{ $event->yardage }} by #{{ $event->ball_carrier }}.</pre>
+                       <pre>{{ $event->play }} {{ $event->type }} play to the {{ $event->side }} for {{ $event->yardage }} by #{{ $event->ball_carrier }}.</pre>
                    @endforeach
                 </div>
             </div>

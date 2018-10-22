@@ -18,6 +18,7 @@ class CreateEventsTable extends Migration
             $table->tinyInteger('quarter')->unsigned()->default(1);
             $table->enum('type', ['run', 'pass'])->default('run');
             $table->enum('side', ['left', 'middle', 'right'])->default('right');
+            $table->string('play', 100);
             $table->smallInteger('yardage');
             $table->tinyInteger('ball_carrier')->unsigned()->nullable();
             $table->tinyInteger('tackled_by')->unsigned()->nullable();

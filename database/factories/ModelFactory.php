@@ -30,6 +30,7 @@ $factory->define(App\Event::class, function (Faker $faker) {
         'quarter' => 1,
         'type' => 'run',
         'side' => $faker->randomElement(['left', 'middle', 'right']),
+        'play' => $faker->randomElement(['Spin 28 Sweep', '31 Dive', '31 Flash WB Corner']),
         'yardage' => $faker->numberBetween(-3, 20),
         'ball_carrier' => $faker->numberBetween(1, 99),
         'tackled_by' => $faker->numberBetween(1, 99),
